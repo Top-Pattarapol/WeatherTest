@@ -14,6 +14,10 @@
 		8A37F81D255E8841001EDE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A37F81B255E8841001EDE62 /* LaunchScreen.storyboard */; };
 		8A37F828255E8842001EDE62 /* WeatherTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F827255E8842001EDE62 /* WeatherTestTests.swift */; };
 		8A37F833255E8842001EDE62 /* WeatherTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F832255E8842001EDE62 /* WeatherTestUITests.swift */; };
+		8A37F8A0255EE899001EDE62 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A37F89F255EE899001EDE62 /* Moya */; };
+		8A37F8A5255EE8E0001EDE62 /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F8A4255EE8E0001EDE62 /* OpenWeatherService.swift */; };
+		8A37F8AE255EF487001EDE62 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F8AD255EF487001EDE62 /* WeatherModel.swift */; };
+		8A37F8B6255EF6AB001EDE62 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F8B5255EF6AB001EDE62 /* ForecastModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,6 @@
 		8A37F80D255E883D001EDE62 /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A37F810255E883D001EDE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A37F812255E883D001EDE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A37F814255E883D001EDE62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A37F817255E883D001EDE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A37F819255E8841001EDE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A37F81C255E8841001EDE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		8A37F82E255E8842001EDE62 /* WeatherTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A37F832255E8842001EDE62 /* WeatherTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestUITests.swift; sourceTree = "<group>"; };
 		8A37F834255E8842001EDE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A37F8A4255EE8E0001EDE62 /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
+		8A37F8AD255EF487001EDE62 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		8A37F8B5255EF6AB001EDE62 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A37F8A0255EE899001EDE62 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +105,7 @@
 		8A37F80F255E883D001EDE62 /* WeatherTest */ = {
 			isa = PBXGroup;
 			children = (
+				8A37F871255EE48E001EDE62 /* Services */,
 				8A37F810255E883D001EDE62 /* AppDelegate.swift */,
 				8A37F812255E883D001EDE62 /* SceneDelegate.swift */,
 				8A37F816255E883D001EDE62 /* Main.storyboard */,
@@ -126,6 +134,24 @@
 			path = WeatherTestUITests;
 			sourceTree = "<group>";
 		};
+		8A37F871255EE48E001EDE62 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8A37F8AC255EF3A4001EDE62 /* Model */,
+				8A37F8A4255EE8E0001EDE62 /* OpenWeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8A37F8AC255EF3A4001EDE62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A37F8AD255EF487001EDE62 /* WeatherModel.swift */,
+				8A37F8B5255EF6AB001EDE62 /* ForecastModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +168,9 @@
 			dependencies = (
 			);
 			name = WeatherTest;
+			packageProductDependencies = (
+				8A37F89F255EE899001EDE62 /* Moya */,
+			);
 			productName = WeatherTest;
 			productReference = 8A37F80D255E883D001EDE62 /* WeatherTest.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 8A37F804255E883D001EDE62;
+			packageReferences = (
+				8A37F89E255EE899001EDE62 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 8A37F80E255E883D001EDE62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A37F811255E883D001EDE62 /* AppDelegate.swift in Sources */,
+				8A37F8A5255EE8E0001EDE62 /* OpenWeatherService.swift in Sources */,
 				8A37F813255E883D001EDE62 /* SceneDelegate.swift in Sources */,
+				8A37F8B6255EF6AB001EDE62 /* ForecastModel.swift in Sources */,
+				8A37F8AE255EF487001EDE62 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +625,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A37F89E255EE899001EDE62 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A37F89F255EE899001EDE62 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A37F89E255EE899001EDE62 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A37F805255E883D001EDE62 /* Project object */;
 }
