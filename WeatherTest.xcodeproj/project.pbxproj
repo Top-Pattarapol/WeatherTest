@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8A37F811255E883D001EDE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F810255E883D001EDE62 /* AppDelegate.swift */; };
 		8A37F813255E883D001EDE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F812255E883D001EDE62 /* SceneDelegate.swift */; };
-		8A37F815255E883D001EDE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A37F814255E883D001EDE62 /* ViewController.swift */; };
 		8A37F818255E883D001EDE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A37F816255E883D001EDE62 /* Main.storyboard */; };
 		8A37F81A255E8841001EDE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A37F819255E8841001EDE62 /* Assets.xcassets */; };
 		8A37F81D255E8841001EDE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A37F81B255E8841001EDE62 /* LaunchScreen.storyboard */; };
@@ -101,7 +100,6 @@
 			children = (
 				8A37F810255E883D001EDE62 /* AppDelegate.swift */,
 				8A37F812255E883D001EDE62 /* SceneDelegate.swift */,
-				8A37F814255E883D001EDE62 /* ViewController.swift */,
 				8A37F816255E883D001EDE62 /* Main.storyboard */,
 				8A37F819255E8841001EDE62 /* Assets.xcassets */,
 				8A37F81B255E8841001EDE62 /* LaunchScreen.storyboard */,
@@ -258,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A37F815255E883D001EDE62 /* ViewController.swift in Sources */,
 				8A37F811255E883D001EDE62 /* AppDelegate.swift in Sources */,
 				8A37F813255E883D001EDE62 /* SceneDelegate.swift in Sources */,
 			);
