@@ -1,9 +1,34 @@
 import Foundation
 import Moya
 
+enum TempType: String {
+    case celsius = "Celsius"
+    case fahrenheit = "Fahrenheit"
+    
+    func convertFromKelvin(_ value: Double) -> Double {
+        let measurement = Measurement(value: value, unit: UnitTemperature.kelvin)
+        switch self {
+        case .celsius:
+            return measurement.converted(to: .celsius).value.rounded(toPlaces: 2)
+        case .fahrenheit:
+            return measurement.converted(to: .fahrenheit).value.rounded(toPlaces: 2)
+        }
+    }
+    
+}
+
 enum OpenWeatherService {
     case currentWeather(cityName: String)
     case fiveDayWeatherForecast(cityName: String)
+    
+    var mockFileName: String {
+        switch self {
+        case .currentWeather:
+            return "Weather"
+        case .fiveDayWeatherForecast:
+            return "Forecast"
+        }
+    }
 }
 
 extension OpenWeatherService: TargetType {
@@ -20,7 +45,7 @@ extension OpenWeatherService: TargetType {
             return "/forecast"
         }
     }
-
+    
     var method: Moya.Method {
         switch self {
         case .currentWeather, .fiveDayWeatherForecast:
@@ -31,16 +56,16 @@ extension OpenWeatherService: TargetType {
     var task: Task {
         switch self {
         case let .currentWeather(cityName), let .fiveDayWeatherForecast(cityName):
-            return .requestParameters(parameters: ["q": cityName, "appid": token], encoding: URLEncoding.queryString)
+            let parameters = ["q": cityName, "appid": token]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     var sampleData: Data {
         switch self {
         case .currentWeather, .fiveDayWeatherForecast:
-            // Provided you have a file named accounts.json in your bundle.
-            guard let url = Bundle.main.url(forResource: "accounts", withExtension: "json"),
-                let data = try? Data(contentsOf: url) else {
-                    return Data()
+            guard let url = Bundle.main.url(forResource: mockFileName, withExtension: "json"),
+                  let data = try? Data(contentsOf: url) else {
+                return Data()
             }
             return data
         }
