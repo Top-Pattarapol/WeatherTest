@@ -78,9 +78,8 @@ class MainViewController: UIViewController, MainDisplayLogic, UITextFieldDelegat
         contentView.isHidden = true
         errorView.isHidden = true
         contentView.applyShadowConner()
-        contentView.backgroundColor = .lightGray
         errorView.applyShadowConner()
-        errorView.backgroundColor = .lightGray
+        cityNameTextField.applyShadowConner()
         cityNameTextField.delegate = self
         cityNameTextField.placeholder = "Entry City Name"
         tempButton.setTitle(TempType.celsius.rawValue, for: .normal)
